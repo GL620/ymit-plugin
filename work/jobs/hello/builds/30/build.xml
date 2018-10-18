@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <io.jenkins.plugins.sample.HelloWorldAction plugin="ymit-plugin@1.0-SNAPSHOT">
+      <useAdv>false</useAdv>
+      <code>0</code>
+      <message>success</message>
+      <setNum>12</setNum>
+      <setNames class="net.sf.json.JSONArray">
+        <elements>
+          <string>易日升接口测试集/a3</string>
+          <string>易日升接口测试集/中文</string>
+          <string>易日升接口测试集/18期申请放款流程</string>
+          <string>易日升接口测试集/G测试集</string>
+          <string>易日升接口测试集/版本1.0/复制测试集验证1</string>
+          <string>易日升接口测试集/版本1.0/18期申请放款流程</string>
+          <string>易日升接口测试集/版本1.0/二级子文件夹/复制测试集验证2</string>
+          <string>易日升接口测试集/18期申请放款流程_copy</string>
+          <string>易日升接口测试集/a2</string>
+          <string>易日升接口测试集/后台新模式修改</string>
+          <string>易日升接口测试集/a1</string>
+          <string>易日升接口测试集/测试集一</string>
+        </elements>
+        <expandElements>false</expandElements>
+      </setNames>
+      <reporturl>192.168.251.151:9088/testReportDetail.html?taskId=107668af8cc44cfb837eaf97f7006990</reporturl>
+    </io.jenkins.plugins.sample.HelloWorldAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>YMITREPORTADDR</name>
+          <value>192.168.251.151:9088/testReportDetail.html?taskId=107668af8cc44cfb837eaf97f7006990</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames class="empty-list"/>
+    </hudson.model.ParametersAction>
+  </actions>
+  <queueId>1</queueId>
+  <timestamp>1539759896492</timestamp>
+  <startTime>1539759896506</startTime>
+  <result>SUCCESS</result>
+  <duration>1599</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace</workspace>
+  <hudsonVersion>2.7.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

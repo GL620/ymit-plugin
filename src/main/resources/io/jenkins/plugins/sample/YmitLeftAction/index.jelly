@@ -1,0 +1,26 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout" xmlns:st="jelly:stapler">
+    <l:layout title="Greeting">
+        <l:side-panel>
+            <st:include page="sidepanel.jelly" it="${it.run}" optional="true" />
+        </l:side-panel>
+        <l:main-panel>
+            <h1>
+                 自动化测试任务执行结果
+            </h1>
+            <h3>结果状态码: ${it.code} </h3>
+            <h3>结果信息: <j:if test="${it.code==0}"><font color="green">${it.message}</font></j:if>
+                <j:if test="${it.code==1}"><font color="red">${it.message}</font></j:if></h3>
+            <h3>测试执行报告：<a href="${it.reporturl}">查看测试报告</a></h3>
+
+
+              <font color="blue"><b>执行测试集个数:</b> ${it.setNum}</font>
+              <font color="green">
+              <j:forEach items="${it.setNames}" var="i">
+                           <li>${i}</li>
+              </j:forEach>
+              </font>
+
+    </l:main-panel>
+</l:layout>
+</j:jelly>

@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+    YMIT测试自动化 是一款辅助jenkins调用执行宇信挡板接口自动化平台上的回归测试任务插件。
+</div>

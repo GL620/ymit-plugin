@@ -1,0 +1,24 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace
+执行地址：http://192.168.251.151:9086/api/ymit/testset/executeFolder?prjcode=P0200&testsets=易日升接口测试集&jobname=panhy
+ERROR: Build step failed with exception
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mnet.sf.json.JSONException: A JSONObject text must begin with '{' at character 0 of 
+	at net.sf.json.util.JSONTokener.syntaxError(JSONTokener.java:499)
+	at net.sf.json.JSONObject._fromJSONTokener(JSONObject.java:919)
+	at net.sf.json.JSONObject._fromString(JSONObject.java:1145)
+	at net.sf.json.JSONObject.fromObject(JSONObject.java:162)
+	at net.sf.json.JSONObject.fromObject(JSONObject.java:132)
+	at io.jenkins.plugins.sample.util.JsonUtil.parseJsonToObject(JsonUtil.java:16)
+	at io.jenkins.plugins.sample.YmitBuilder.perform(HelloWorldBuilder.java:75)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.Build$BuildExecution.build(Build.java:205)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:162)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:534)
+	at hudson.model.Run.execute(Run.java:1741)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:410)
+Build step 'YMIT自动化接口测试' marked build as failure
+Finished: FAILURE

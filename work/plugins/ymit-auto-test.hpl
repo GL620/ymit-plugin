@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Group-Id: io.jenkins.plugins
+Short-Name: ymit-auto-test
+Long-Name: YMIT
+Plugin-Version: 1.0-SNAPSHOT (private-10/18/2018 15:43-phy)
+Hudson-Version: 2.7.3
+Jenkins-Version: 2.7.3
+Plugin-Dependencies: structs:1.7
+Plugin-Developers: panhy:yusys:panhpanhy@yusys.com.cn
+Libraries: H:\ymit\jenkins_plugins\ymit-plugin\src\main\resources,H:\y
+ mit\jenkins_plugins\ymit-plugin\target\classes,C:\Users\phy\.m2\repos
+ itory\commons-codec\commons-codec\1.9\commons-codec-1.9.jar,C:\Users\
+ phy\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpcli
+ ent-4.5.2.jar,C:\Users\phy\.m2\repository\org\apache\httpcomponents\h
+ ttpcore\4.4.6\httpcore-4.4.6.jar
+Resource-Path: H:\ymit\jenkins_plugins\ymit-plugin\src\main\webapp
+

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <io.jenkins.plugins.sample.YmitBuilder plugin="ymit-auto-test@1.0-SNAPSHOT">
+      <name>panhy</name>
+      <useAdv>false</useAdv>
+      <serverAddr>192.168.251.151:9086</serverAddr>
+      <projectCode>P0200</projectCode>
+      <testSetsOrForder>易日升接口测试集</testSetsOrForder>
+    </io.jenkins.plugins.sample.YmitBuilder>
+    <hudson.tasks.Shell>
+      <command>
+echo $YMITREPORTADDR</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>

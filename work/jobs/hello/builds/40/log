@@ -1,0 +1,8 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace
+执行地址：http://192.168.251.151:9086/api/ymit/testset/executeFolder?prjcode=P0200&testsets=易日升接口测试集&jobname=panhy
+注入环境变量测试报告地址开始
+[workspace] $ sh -xe C:\Users\phy\AppData\Local\Temp\hudson7985891751730154378.sh
++ echo '192.168.251.151:9088/testReportDetail.html?taskId=d9a1be6fa20a4e4eb481c170ec1c54c6'
+192.168.251.151:9088/testReportDetail.html?taskId=d9a1be6fa20a4e4eb481c170ec1c54c6
+Finished: SUCCESS

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <io.jenkins.plugins.sample.HelloWorldAction plugin="ymit-plugin@1.0-SNAPSHOT">
+      <useAdv>false</useAdv>
+      <serverAddr>192.168.251.187:8086</serverAddr>
+      <projectCode>P0200</projectCode>
+      <testSetsOrForder>测试集列表集合</testSetsOrForder>
+    </io.jenkins.plugins.sample.HelloWorldAction>
+  </actions>
+  <queueId>2</queueId>
+  <timestamp>1539675878326</timestamp>
+  <startTime>1539675878339</startTime>
+  <result>SUCCESS</result>
+  <duration>891</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace</workspace>
+  <hudsonVersion>2.7.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>
