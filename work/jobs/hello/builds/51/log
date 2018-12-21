@@ -1,0 +1,37 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace
+执行地址：http://192.168.251.151:9086/api/ymit/testset/executeFolder/panhy/P0200/易日升接口测试集
+注入环境变量测试报告地址开始
+[workspace] $ sh -xe C:\Users\phy\AppData\Local\Temp\hudson3565790299447226054.sh
++ echo '192.168.251.151:9088/testReportDetail.html?taskId=6eb2ea77be9641a78754b85e5dc1d73c'
+192.168.251.151:9088/testReportDetail.html?taskId=6eb2ea77be9641a78754b85e5dc1d73c
+Sending e-mails to: panhy@yusys.com.cn
+ERROR: 553 Mail from must equal authorized user
+
+[8mha:AAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mcom.sun.mail.smtp.SMTPSendFailedException: 553 Mail from must equal authorized user
+;
+  nested exception is:
+	com.sun.mail.smtp.SMTPSenderFailedException: 553 Mail from must equal authorized user
+
+	at com.sun.mail.smtp.SMTPTransport.issueSendCommand(SMTPTransport.java:2057)
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1580)
+	at com.sun.mail.smtp.SMTPTransport.sendMessage(SMTPTransport.java:1097)
+	at javax.mail.Transport.send0(Transport.java:195)
+	at javax.mail.Transport.send(Transport.java:124)
+	at hudson.tasks.MailSender.run(MailSender.java:129)
+	at hudson.tasks.Mailer.perform(Mailer.java:170)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:78)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:779)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:720)
+	at hudson.model.Build$BuildExecution.post2(Build.java:185)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:665)
+	at hudson.model.Run.execute(Run.java:1766)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:98)
+	at hudson.model.Executor.run(Executor.java:410)
+Caused by: com.sun.mail.smtp.SMTPSenderFailedException: 553 Mail from must equal authorized user
+
+	at com.sun.mail.smtp.SMTPTransport.mailFrom(SMTPTransport.java:1587)
+	... 15 more
+Finished: SUCCESS

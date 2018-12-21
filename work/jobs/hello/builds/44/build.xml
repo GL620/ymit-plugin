@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <io.jenkins.plugins.sample.EnvInjectBuilderContributionAction plugin="ymit-plugin@1.0-SNAPSHOT"/>
+    <io.jenkins.plugins.sample.YmitLeftAction plugin="ymit-plugin@1.0-SNAPSHOT">
+      <useAdv>false</useAdv>
+      <code>0</code>
+      <message>success</message>
+      <setNum>12</setNum>
+      <setNames class="net.sf.json.JSONArray">
+        <elements>
+          <string>易日升接口测试集/a3</string>
+          <string>易日升接口测试集/中文</string>
+          <string>易日升接口测试集/18期申请放款流程</string>
+          <string>易日升接口测试集/G测试集</string>
+          <string>易日升接口测试集/版本1.0/复制测试集验证1</string>
+          <string>易日升接口测试集/版本1.0/18期申请放款流程</string>
+          <string>易日升接口测试集/版本1.0/二级子文件夹/复制测试集验证2</string>
+          <string>易日升接口测试集/18期申请放款流程_copy</string>
+          <string>易日升接口测试集/a2</string>
+          <string>易日升接口测试集/后台新模式修改</string>
+          <string>易日升接口测试集/a1</string>
+          <string>易日升接口测试集/测试集一</string>
+        </elements>
+        <expandElements>false</expandElements>
+      </setNames>
+      <reporturl>192.168.251.151:9088/testReportDetail.html?taskId=bb20f512e77149e58edbfd962e4a7187</reporturl>
+    </io.jenkins.plugins.sample.YmitLeftAction>
+    <io.jenkins.plugins.sample.EnvInjectBuilderContributionAction plugin="ymit-plugin@1.0-SNAPSHOT"/>
+    <io.jenkins.plugins.sample.YmitLeftAction plugin="ymit-plugin@1.0-SNAPSHOT">
+      <useAdv>false</useAdv>
+      <code>0</code>
+      <message>success</message>
+      <setNum>12</setNum>
+      <setNames class="net.sf.json.JSONArray">
+        <elements>
+          <string>易日升接口测试集/a3</string>
+          <string>易日升接口测试集/中文</string>
+          <string>易日升接口测试集/18期申请放款流程</string>
+          <string>易日升接口测试集/G测试集</string>
+          <string>易日升接口测试集/版本1.0/复制测试集验证1</string>
+          <string>易日升接口测试集/版本1.0/18期申请放款流程</string>
+          <string>易日升接口测试集/版本1.0/二级子文件夹/复制测试集验证2</string>
+          <string>易日升接口测试集/18期申请放款流程_copy</string>
+          <string>易日升接口测试集/a2</string>
+          <string>易日升接口测试集/后台新模式修改</string>
+          <string>易日升接口测试集/a1</string>
+          <string>易日升接口测试集/测试集一</string>
+        </elements>
+        <expandElements>false</expandElements>
+      </setNames>
+      <reporturl>192.168.251.151:9088/testReportDetail.html?taskId=3e9fd86e43f746faace96c119be55e2f</reporturl>
+    </io.jenkins.plugins.sample.YmitLeftAction>
+  </actions>
+  <queueId>1</queueId>
+  <timestamp>1540096575989</timestamp>
+  <startTime>1540096576015</startTime>
+  <result>SUCCESS</result>
+  <duration>3051</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace</workspace>
+  <hudsonVersion>2.7.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>

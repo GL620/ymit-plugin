@@ -15,6 +15,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.jvnet.hudson.test.JenkinsRule;
 
+import javax.print.DocFlavor;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import static org.junit.Assert.assertThat;
 
 
@@ -99,7 +107,7 @@ public class YmitBuilderTest {
         }
 
     @Test
-    public void testCurl() {
+    public void testCurl() throws IOException {
         String url = "http://192.168.251.187:10012/api/ymit/testset/executeFolder?prjcode=ymit-plugin&testsets=测试集列表集合&jobname=tester";
         String result = HttpUtil.doGet(url);
         Assert.assertNotNull(result);
@@ -132,5 +140,39 @@ public class YmitBuilderTest {
                 "}";
         YmitResponse ymitResponse = JsonUtil.parseJsonToObject(jsonStr);
         Assert.assertNotNull(ymitResponse.getReporturl());
+    }
+    @Test
+    public void testDate(){
+        Date date = new Date();
+        Calendar instance = Calendar.getInstance();
+        instance.setTime(date);
+        instance.add(Calendar.DAY_OF_MONTH,-1);
+        Date time = instance.getTime();
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String format = simpleDateFormat.format(time);
+
+        //System.out.println(format.contains("sdfsdf"));
+        Assert.assertNotNull(format);
+    }
+
+    @Test
+    public void testURLEncoding(){
+        String url = "http://192.168.251.151:9086/api/ymit/testset/executeFolder/ymit0925/P0200/";
+        String encode = null;
+        try {
+             encode = URLEncoder.encode("易日升接口测试集", "UTF-8");
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        System.out.println(encode);
+        Assert.assertNotNull(encode);
+        try {
+            String s = HttpUtil.doGet(url+encode);
+            System.out.println(s.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

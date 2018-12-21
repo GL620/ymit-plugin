@@ -1,0 +1,8 @@
+Started by user [8mha:AAAAlh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgYu/dLi1CL9vNKcHACFIKlWvwAAAA==[0manonymous
+Building in workspace H:\ymit\jenkins_plugins\ymit-plugin\work\jobs\hello\workspace
+执行地址：http://192.168.251.151:9086/api/ymit/testset/executeFolder/panhy/P02001/易日升接口测试集
+注入环境变量测试报告地址开始
+[workspace] $ sh -xe C:\Users\phy\AppData\Local\Temp\hudson3043687705224736906.sh
++ echo $'\346\212\245\345\221\212\345\234\260\345\235\200\347\224\237\346\210\220\345\244\261\350\264\245:\346\265\213\350\257\225\351\233\206\346\210\226\346\226\207\344\273\266\345\244\271\344\270\215\345\255\230\345\234\250'
+报告地址生成失败:测试集或文件夹不存在
+Finished: SUCCESS

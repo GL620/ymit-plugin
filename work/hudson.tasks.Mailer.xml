@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.18">
+  <hudsonUrl>http://127.0.0.1:8080/jenkins/</hudsonUrl>
+  <smtpAuthUsername>panhy@yusys.com.cn</smtpAuthUsername>
+  <smtpAuthPassword>X63CU4Y2crUlEUeooacD5B9d2Qe3MSJjgzmpAX0h/eU=</smtpAuthPassword>
+  <replyToAddress>xx</replyToAddress>
+  <smtpHost>mail.yusys.com.cn</smtpHost>
+  <useSsl>false</useSsl>
+  <smtpPort>25</smtpPort>
+  <charset>GBK</charset>
+</hudson.tasks.Mailer_-DescriptorImpl>

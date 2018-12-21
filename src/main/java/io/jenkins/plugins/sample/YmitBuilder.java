@@ -1,3 +1,4 @@
+
 package io.jenkins.plugins.sample;
 
 import hudson.Launcher;
@@ -10,6 +11,8 @@ import hudson.tasks.BuildStepDescriptor;
 import io.jenkins.plugins.sample.entity.YmitResponse;
 import io.jenkins.plugins.sample.util.HttpUtil;
 import io.jenkins.plugins.sample.util.JsonUtil;
+import io.jenkins.plugins.sample.util.ToUTF8;
+import io.jenkins.plugins.sample.util.VariableReplacerUtil;
 import net.sf.json.JSONObject;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
@@ -26,8 +29,8 @@ import org.kohsuke.stapler.StaplerRequest;
 public class YmitBuilder extends Builder implements SimpleBuildStep {
 
     // 执行者名称 来自web界面
-    private  String name;
-    // 高级选项
+    private final String name;
+    // 是否高级选项
     private boolean useAdv;
     // 服务器地址
     private final String serverAddr;
@@ -60,8 +63,14 @@ public class YmitBuilder extends Builder implements SimpleBuildStep {
     @Override
     public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher, TaskListener listener) throws InterruptedException, IOException {
 
-        // 拼装请求url
-        String url = "http://"+serverAddr+"/api/ymit/testset/executeFolder?prjcode="+projectCode+"&testsets="+testSetsOrForder+"&jobname="+name;
+        // 替换环境变量中值，若不存在原值填充
+        String rep_serverAddr = VariableReplacerUtil.checkEnvVars(run,listener,serverAddr);
+        String rep_name = VariableReplacerUtil.checkEnvVars(run,listener,name);
+        String rep_projectCode = VariableReplacerUtil.checkEnvVars(run,listener,projectCode);
+        String rep_testSetsOrForder = VariableReplacerUtil.checkEnvVars(run,listener,testSetsOrForder);
+
+        // 服务器地址 任务名 项目名 测试集或文件夹
+        String url = "http://"+rep_serverAddr+"/api/ymit/testset/executeFolder/"+rep_name+"/"+rep_projectCode+"/"+rep_testSetsOrForder;
 
         listener.getLogger().println("执行地址："+url);
 
@@ -69,7 +78,7 @@ public class YmitBuilder extends Builder implements SimpleBuildStep {
         String httpResponse = HttpUtil.doGet(url);
 
         // 封装返回结果到对象返回
-        if (httpResponse!=null || "".equals(httpResponse)){
+        if (httpResponse!=null && !"".equals(httpResponse)){
             YmitResponse ymitResponse = JsonUtil.parseJsonToObject(httpResponse);
             YmitLeftAction helloWorldAction = new YmitLeftAction();
             if (ymitResponse.getCode() == 0){
@@ -82,12 +91,13 @@ public class YmitBuilder extends Builder implements SimpleBuildStep {
             }else {
                 helloWorldAction.setCode(ymitResponse.getCode());
                 helloWorldAction.setMessage(ymitResponse.getMessage());
-                this.ymitReportAddr = "address_is_null";
+                this.ymitReportAddr = "!!报告地址生成失败:"+ ToUTF8.execute(ymitResponse.getMessage());
             }
             // 存放变量
             listener.getLogger().println("注入环境变量测试报告地址开始");
 
             Map<String, String> variables = new HashMap<String, String>();
+
             // 插入测试报告变量到系统
             variables.put("YMITREPORTADDR",ymitReportAddr);
 
@@ -96,6 +106,7 @@ public class YmitBuilder extends Builder implements SimpleBuildStep {
             run.addAction(helloWorldAction);
         }
     }
+
     /*
     * 静态类
     * */
@@ -106,13 +117,13 @@ public class YmitBuilder extends Builder implements SimpleBuildStep {
             // 校验ip地址和端口格式
         public FormValidation doCheckServerAddr(@QueryParameter String serverAddr)
                 throws IOException, ServletException {
-            String url_port_mapping = "(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\:([0-9]|[1-9]\\d{1,3}|[1-5]\\d{4}|6[0-5]{2}[0-3][0-5])";
+           // String url_port_mapping = "(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\.(\\d{1,2}|1\\d\\d|2[0-4]\\d|25[0-5])\\:([0-9]|[1-9]\\d{1,3}|[1-5]\\d{4}|6[0-5]{2}[0-3][0-5])";
 
             if (serverAddr.length() == 0)
                 return FormValidation.error(Messages.HelloWorldBuilder_DescriptorImpl_errors_missingName());
 
-            if (!serverAddr.matches(url_port_mapping))
-               return FormValidation.error(Messages.HelloWorldBuilder_DescriptorImpl_warnings_notIPandPort());
+//            if (!serverAddr.matches(url_port_mapping))
+//               return FormValidation.error(Messages.HelloWorldBuilder_DescriptorImpl_warnings_notIPandPort());
             return FormValidation.ok();
         }
 
@@ -127,7 +138,7 @@ public class YmitBuilder extends Builder implements SimpleBuildStep {
         public FormValidation doCheckName(@QueryParameter String name){
             if (name.length() == 0)
                 return FormValidation.error(Messages.HelloWorldBuilder_DescriptorImpl_errors_missingName());
-            if (name.length() < 4)
+            if (name.length() < 2)
                 return FormValidation.warning(Messages.HelloWorldBuilder_DescriptorImpl_warnings_tooShort());
             return FormValidation.ok();
         }
